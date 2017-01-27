@@ -1,0 +1,63 @@
+<html>
+<body>
+
+<script>
+
+//    function MyErr(msg)
+//    {
+//        this.constructor.prototype.__proto__ = Error.prototype;
+//        this.name = 'MyErr';
+//        this.message = msg;
+//    }
+//
+//    throw new MyErr("Custom error 1");
+
+    function arrFn()
+    {
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        for(var el in arr)
+        {
+            console.log(el);
+        }
+
+        console.log("outside the loop: " + el);
+    }
+
+    arrFn();
+
+    console.log("outside the arrFn: " + window.el);
+
+    console.log("--> " + (65 % 2.0));
+
+    function test()
+    {
+        var a = "a";
+
+        if (true)
+        {
+            var b = "b";
+            console.log("test#if#a: " + a);
+            console.log("test#if#b: " + b);
+        }
+
+        console.log("test#b: " + b);
+
+        function innerFn()
+        {
+            var inner = "inner";
+            console.log("test#innerFn#a: " + a);
+            console.log("test#innerFn#b: " + b);
+        }
+
+        innerFn();
+
+        console.log("test#innerFn#inner: " + inner);
+    }
+
+    test();
+
+</script>
+
+</body>
+</html>
