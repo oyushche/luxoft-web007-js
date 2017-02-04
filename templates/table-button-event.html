@@ -1,0 +1,44 @@
+<html>
+<body>
+
+<button id="add" onclick="addBird(event)">Add Bird</button>
+
+<br><br>
+
+<table id="summary">
+
+    <tr>
+        <th>#</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>Duck</td>
+    </tr>
+    <tr>
+        <td>45</td>
+        <td>Eagle</td>
+    </tr>
+</table>
+
+
+<script>
+
+    function addBird(event)
+    {
+        console.log("addBird ---> " + event);
+    }
+
+    var table = document.getElementById("summary");
+    var row = table.insertRow();
+
+    var c_1 = row.insertCell(0);
+    c_1.innerHTML = 67;
+
+    var c_2 = row.insertCell(1);
+    c_2.innerHTML = "Duck";
+
+</script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 (function ()
 {
-    var age = 33;
+    var age = 20;
 
     var countOfYears = 60 - age;
     var monthlyPayment = 704;
@@ -17,7 +17,7 @@
     function createRetirementPlan()
     {
         // TODO your code here
-        for (var i = 1; i < countOfYears; i++)
+        for (var i = 0; i < countOfYears; i++)
         {
             sum += monthlyPayment * 12;
             sum += calcInterest(sum);
