@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<script>
+
+    // $when(fn1, .., fnN)
+    //      .done(function(res1, .., resN) {})
+    //      .fail(function(err){});
+
+    function f3()
+    {
+        console.log("f3...");
+        return "f3";
+    }
+
+    function f5()
+    {
+        return "f5";
+    }
+
+    function fail()
+    {
+        // just for time delay
+        for (var i = 0; i < 100000000; i++)
+        {
+            if (i % 100000 == 0)
+            {
+                console.log(".");
+            }
+        }
+
+        throw new Error("...");
+    }
+
+    function doIt()
+    {
+        $.when(f3(), f5()).done(function (result_1, result_2)
+        {
+            console.log("results: [" + result_1 + ", " + result_2 + "]");
+        });
+    }
+
+    function doFail()
+    {
+        $.when(f3(), fail())
+        .done(function (result_1, result_2)
+        {
+            console.log("results: [" + result_1 + ", " + result_2 + "]");
+        })
+        .fail(function (err)
+        {
+            console.log(err);
+        });
+    }
+
+</script>
+
+<br><br>
+<button onclick="doIt()" >Click to do the magic</button>
+<br><br>
+<button onclick="doFail()" >Click to fail</button>
+
+</body>
+</html>

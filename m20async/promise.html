@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../js/jquery-3.1.1.js"></script>
+</head>
+<body>
+
+<script>
+
+
+    // states: resolve, reject
+    // events: done, fail, always
+    var def = $.Deferred();
+
+    // object to subscribe on
+    // events: done, fail, always
+    var promise = def.promise();
+
+    promise
+        .done(function ()
+        {
+            console.log("--> processed: #done");
+        })
+        .fail(function ()
+        {
+            console.log("--> processed: #fail");
+        })
+        .always(function ()
+        {
+            console.log("--> processed: #always");
+        });
+
+
+    function doIt()
+    {
+        console.log("--> called: #doIt");
+        def.resolve();
+    }
+
+    function reject()
+    {
+        console.log("--> called: #reject");
+        def.reject();
+    }
+
+
+</script>
+
+<br><br>
+<button onclick="doIt()" >Click to do the magic</button>
+<br><br>
+<button onclick="reject()" >Click to fail</button>
+
+</body>
+</html>
