@@ -49,7 +49,7 @@
 
     function doFail()
     {
-        $.when(f3(), fail())
+        $.when(fail(), f3())
         .done(function (result_1, result_2)
         {
             console.log("results: [" + result_1 + ", " + result_2 + "]");

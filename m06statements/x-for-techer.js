@@ -1,10 +1,10 @@
 (function ()
 {
-    var age = 20;
+    var age = 40;
 
     var countOfYears = 60 - age;
-    var monthlyPayment = 704;
-    var interestRate = 12;
+    var monthlyPayment = 1400;
+    var interestRate = 10;
 
     var sum = 0;
 

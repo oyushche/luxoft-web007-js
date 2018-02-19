@@ -19,25 +19,25 @@
     // events: done, fail, always
     var promise = def.promise();
 
-    promise
-        .done(function ()
-        {
-            console.log("--> processed: #done");
-        })
-        .fail(function ()
-        {
-            console.log("--> processed: #fail");
-        })
-        .always(function ()
-        {
-            console.log("--> processed: #always");
-        });
+//    promise
+//        .done(function ()
+//        {
+//            console.log("--> processed: #done");
+//        })
+//        .fail(function ()
+//        {
+//            console.log("--> processed: #fail");
+//        })
+//        .always(function ()
+//        {
+//            console.log("--> processed: #always");
+//        });
 
 
     function doIt()
     {
         console.log("--> called: #doIt");
-        def.resolve();
+        def.resolve("ok");
     }
 
     function reject()
@@ -47,7 +47,28 @@
     }
 
 
+    function getDataFromServer(url)
+    {
+        return promise;
+    }
+
+
+    function test()
+    {
+        console.log("---> start");
+
+        getDataFromServer("http::")
+            .done((data) => getDataFromServer("dsadsad")
+                .done(() => console.log()));
+
+        console.log("---> end");
+    }
+
+
 </script>
+
+<br><br>
+<button onclick="test()" >Get data from server</button>
 
 <br><br>
 <button onclick="doIt()" >Click to do the magic</button>

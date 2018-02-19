@@ -1,0 +1,26 @@
+<html>
+<head>
+
+</head>
+<body>
+
+
+<script>
+
+    document.addEventListener("randomEventName", function(e)
+    {
+        console.log(e.detail);
+    });
+
+
+    var event = new CustomEvent("randomEventName", { "detail": "--> override detail property here" });
+
+
+    document.dispatchEvent(event);
+
+    document.dispatchEvent(event);
+
+</script>
+
+</body>
+</html>
