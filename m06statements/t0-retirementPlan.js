@@ -3,7 +3,7 @@
     var age = 33;
 
     var countOfYears = 60 - age;
-    var howMuchYouWantToSaveInOneMonth = 704;
+    var howMuchYouWantToSaveEveryMonth = 704;
     var interestRate = 12;
 
     var sum = 0;
