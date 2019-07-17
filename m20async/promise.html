@@ -19,19 +19,19 @@
     // events: done, fail, always
     var promise = def.promise();
 
-//    promise
-//        .done(function ()
-//        {
-//            console.log("--> processed: #done");
-//        })
-//        .fail(function ()
-//        {
-//            console.log("--> processed: #fail");
-//        })
-//        .always(function ()
-//        {
-//            console.log("--> processed: #always");
-//        });
+   promise
+       .done(function ()
+       {
+           console.log("--> processed: #done");
+       })
+       .fail(function ()
+       {
+           console.log("--> processed: #fail");
+       })
+       .always(function ()
+       {
+           console.log("--> processed: #always");
+       });
 
 
     function doIt()
@@ -59,7 +59,8 @@
 
         getDataFromServer("http::")
             .done((data) => getDataFromServer("dsadsad")
-                .done(() => console.log()));
+                .done(() => console.log('DONE')));
+
 
         console.log("---> end");
     }
